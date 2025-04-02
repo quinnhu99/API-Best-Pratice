@@ -15,6 +15,6 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "32090335-29d259b1-fc34-45ed-96b1-694f7139ca93" -e "32090335-e6198264-c4b3-4bfa-bf2a-1e05bc3b12c5" --integration-id "176094-${{ github.run_id }}"
-          postman collection run "32090335-43058884-555a-4f9f-a347-e4392215c950" -e "32090335-e6198264-c4b3-4bfa-bf2a-1e05bc3b12c5" --integration-id "176094-${{ github.run_id }}"
+          postman collection run "32090335-e5f0ced9-1d0e-470d-b499-e984ac65ca91" -e "32090335-e6198264-c4b3-4bfa-bf2a-1e05bc3b12c5" --integration-id "176094-${{ github.run_id }}"
           # Lint your API using Postman CLI
           postman api lint d2603762-4e40-4c13-bbb0-f625679ebcce --integration-id 176094
