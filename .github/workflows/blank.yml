@@ -14,7 +14,7 @@ jobs:
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run collection with local env
         run: |
-          postman collection run "collection-id" \
+          postman collection run "32090335-29d259b1-fc34-45ed-96b1-694f7139ca93" \
           -e ".github/workflows/environment.json"
       - name: Run API tests
         run: |
