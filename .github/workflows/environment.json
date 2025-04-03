@@ -7,11 +7,6 @@
 		"value": "",
 		"enabled": true
 		},
-		{
-		"key": "baseUrl",
-		"value": "https://api.anhtester.com",
-		"enabled": true
-		}
 	],
 	"_postman_variable_scope": "environment",
 	"_postman_exported_at": "2025-04-03T03:37:17.177Z",
