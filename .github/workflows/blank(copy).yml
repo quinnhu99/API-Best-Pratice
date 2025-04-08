@@ -1,9 +1,6 @@
 name: Automated API tests using Postman CLI 2
 
-on: 
-  push:
-    branches: [main]  # Kích hoạt khi có push vào nhánh main
-  workflow_dispatch:  # Cho phép chạy thủ công từ GitHub UI
+on: push
 
 jobs:
   automated-api-tests:
@@ -14,7 +11,7 @@ jobs:
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
       - name: Login to Postman CLI
-        run: postman login --with-api-key ${{secrets.POSTMAN_API_KEY}}
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run API tests
         run: |
           postman collection run "32090335-29d259b1-fc34-45ed-96b1-694f7139ca93" -e "32090335-e6198264-c4b3-4bfa-bf2a-1e05bc3b12c5" --integration-id "176094-${{ github.run_id }}"
