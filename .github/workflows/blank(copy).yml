@@ -1,6 +1,6 @@
 name: Automated API tests using Postman CLI 2
 
-on: push
+on: fork
 
 jobs:
   automated-api-tests:
