@@ -24,8 +24,8 @@ jobs:
           postman api lint d2603762-4e40-4c13-bbb0-f625679ebcce --integration-id 176094
 
   say_hello:
+    needs:  automated-api-tests
     runs-on: ubuntu-latest
-
     steps:
       - name: Print Hello World
         run: echo "Hello, World!"
