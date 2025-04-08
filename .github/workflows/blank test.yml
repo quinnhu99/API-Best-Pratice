@@ -38,6 +38,7 @@ jobs:
           approveWords: "approve, ok, lgtm"
           issueTitle: "Manual Approval Required"
           issueBody: "Manual Approval Required"
+          issueLabels: "Manual Approval Required"
 
   macos-tests:
     needs: manual-approval
