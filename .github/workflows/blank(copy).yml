@@ -3,7 +3,14 @@ name: Automated API tests using Postman CLI 2
 on: push
 
 jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, World!"
+        
   ubuntu-tests:
+    needs: say_hello
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +28,7 @@ jobs:
 
   macos-tests:
     runs-on: macos-latest
-    needs: ubuntu-tests  # macOS tests sẽ chỉ chạy khi job `ubuntu-tests` thành công
+    needs: say_hello  # macOS tests sẽ chỉ chạy khi job `ubuntu-tests` thành công
     steps:
       - uses: actions/checkout@v4
       - name: Install Postman CLI
@@ -38,9 +45,4 @@ jobs:
           postman api lint d2603762-4e40-4c13-bbb0-f625679ebcce --integration-id 176094
 
 
-  # say_hello:
-  #   needs:  automated-api-tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Print Hello World
-  #       run: echo "Hello, World!"
+  
