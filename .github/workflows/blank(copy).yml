@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - with:
-             approvers: "your-team, another-user"  # Replace with your approvers
+             approvers: "quinnhu99"  # Replace with your approvers
              approval_keywords: "approve, ok, lgtm"  # Replace with your approval keywords
              issue_title: "Manual Approval Required"
       - name: Install Postman CLI
