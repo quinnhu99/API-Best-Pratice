@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait for approval
-        uses: peter-evans/approval-action@v1
+        uses: ekeel/approval-action@v1.0.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           approvers: "quinnhu99"
