@@ -33,7 +33,7 @@ jobs:
       - name: Wait for approval
         uses: ekeel/approval-action@v1.0.3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           approvers: "quinnhu99"
           approveWords: "approve, ok, lgtm"
           issueTitle: "Manual Approval Required"
