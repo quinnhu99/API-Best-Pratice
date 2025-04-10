@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Print output
         run: |
-          echo "Received: ${{needs.manual-approval.outputs.APPROVE}}"
+          echo "Received: ${{needs.manual-approval.outputs.APPROVE}} == true"
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/osx_64.sh" | sh
