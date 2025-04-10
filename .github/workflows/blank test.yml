@@ -34,6 +34,8 @@ jobs:
   manual-approval:
     needs: ubuntu-tests
     runs-on: ubuntu-latest
+    outputs:
+      APPROVE: ${{steps.approval.outputs.approved}}
     steps:
       - name: Wait for approval
         id: approval
@@ -45,12 +47,10 @@ jobs:
           issueTitle: "Manual Approval Required"
           issueBody: "This is a manual test approval. Please approve or deny this workflow."
           issueLabels: "Manual Approval Required"
-      - name: Set approval
-        run: APPROVE=steps.approval.outputs.approved
 
   macos-tests:
     needs: manual-approval
-    if: APPROVE == true
+    if: needs.manual-approval.outputs.APPROVE == true
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
