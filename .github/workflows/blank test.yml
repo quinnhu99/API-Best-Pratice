@@ -47,6 +47,9 @@ jobs:
           issueTitle: "Manual Approval Required"
           issueBody: "This is a manual test approval. Please approve or deny this workflow."
           issueLabels: "Manual Approval Required"
+      - name: Get the output
+        run: |
+          echo "Approved: ${{ steps.approval.outputs.approved }}"
 
   macos-tests:
     needs: manual-approval
