@@ -50,13 +50,17 @@ jobs:
       - name: Get the output
         run: |
           echo "Approved: ${{ steps.approval.outputs.approved }}"
+          
 
   macos-tests:
     needs: manual-approval
     if: ${{needs.manual-approval.outputs.APPROVE}} == true
-    runs-on: macos-latest
+    runs-on: macos-latest 
     steps:
       - uses: actions/checkout@v4
+      - name: Print output
+        run: |
+          echo "Received: ${{needs.manual-approval.outputs.APPROVE}}"
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/osx_64.sh" | sh
