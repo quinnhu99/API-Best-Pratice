@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+env:
+  APPROVE: false
+
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -41,11 +44,13 @@ jobs:
           approveWords: "approve, ok, lgtm"
           issueTitle: "Manual Approval Required"
           issueBody: "This is a manual test approval. Please approve or deny this workflow."
-          issueLabels: "Manual Approval Required"  
+          issueLabels: "Manual Approval Required"
+      - name: Set approval
+        run: APPROVE=steps.approval.outputs.approved
 
   macos-tests:
     needs: manual-approval
-    if: steps.approval.outputs.approved == true
+    if: APPROVE == true
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
