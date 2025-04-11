@@ -55,7 +55,7 @@ jobs:
 
   macos-tests:
     needs: manual-approval
-    if: needs.manual-approval.outputs.APPROVE == true
+    if: needs.manual-approval.outputs.APPROVE == 'true'
     runs-on: macos-latest 
     steps:
       - uses: actions/checkout@v4
