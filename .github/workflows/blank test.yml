@@ -43,7 +43,8 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
           approvers: "quinnhu99"
-          approveWords: "approve, ok, lgtm"
+          approveWords: "approve, approved"
+          rejectWords: "deny, denied, reject, rejected"
           issueTitle: "Manual Approval Required"
           issueBody: "This is a manual test approval. Please approve or deny this workflow."
           issueLabels: "Manual Approval Required"
